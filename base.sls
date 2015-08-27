@@ -9,4 +9,10 @@ utils:
       - curl
       - htop
       - vim
-      - vim-gui-common
+      - libssl-dev
+      - zlib1g-dev
+      - libbz2-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - wget
+      - llvm

@@ -1,9 +1,11 @@
 base:
   '*':
     - base
+    - git
+    - vim
     - node
     - tmux
-    - git
     - vagrant
     - python
     - linters
+    - redis
