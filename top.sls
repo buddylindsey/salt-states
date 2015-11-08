@@ -9,3 +9,4 @@ base:
     - python
     - linters
     - redis
+    - postgresql
