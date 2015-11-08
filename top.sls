@@ -10,3 +10,4 @@ base:
     - linters
     - redis
     - postgresql
+    - atom
