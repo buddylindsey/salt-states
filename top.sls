@@ -10,4 +10,4 @@ base:
     - linters
     - redis
     - postgresql
-    - atom
+    - mono
