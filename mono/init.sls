@@ -13,5 +13,6 @@ mono_packages:
       - mono-devel
       - mono-complete
       - ca-certificates-mono
+      - monodevelop
     - require:
       - pkgrepo: mono
