@@ -15,3 +15,19 @@ coffee:
 
 jsonlint:
   npm.installed
+
+eslint:
+  npm.installed
+
+babel-eslint:
+  npm.installed
+
+eslint-plugin-react:
+  npm.installed
+
+/home/buddy/.eslintrc:
+  file.managed:
+    - source: salt://linters/eslintrc
+    - group: buddy
+    - user: buddy
+    - template: jinja
