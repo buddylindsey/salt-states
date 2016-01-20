@@ -11,3 +11,4 @@ base:
     - redis
     - postgresql
     - mono
+    - rproject
