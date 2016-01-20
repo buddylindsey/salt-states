@@ -16,3 +16,4 @@ utils:
       - libsqlite3-dev
       - wget
       - llvm
+      - ttf-ancient-fonts
