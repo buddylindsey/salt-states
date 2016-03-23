@@ -18,3 +18,4 @@ utils:
       - wget
       - llvm
       - ttf-ancient-fonts
+      - ack-grep
