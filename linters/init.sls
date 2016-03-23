@@ -1,3 +1,4 @@
+{% set user_config = pillar.get('user', {'username': 'blindsey'}) -%}
 jshint:
   npm.installed
 
@@ -25,9 +26,9 @@ babel-eslint:
 eslint-plugin-react:
   npm.installed
 
-/home/buddy/.eslintrc:
+/home/{{user_config.username}}/.eslintrc:
   file.managed:
     - source: salt://linters/eslintrc
-    - group: buddy
-    - user: buddy
+    - group: {{user_config.username}}
+    - user: {{user_config.username}}
     - template: jinja

@@ -1,3 +1,4 @@
+{% set user_config = pillar.get('user', {'username': 'blindsey'}) -%}
 vim:
   pkg.installed:
     - pkgs:
@@ -7,25 +8,25 @@ vim:
   git.latest:
     - name: https://github.com/buddylindsey/vim.git
     - rev: master
-    - target: /home/buddy/.vim/
+    - target: /home/{{user_config.username}}/.vim/
     - submodules: True
-    - user: buddy
+    - user: {{user_config.username}}
   file.symlink:
-    - name: /home/buddy/.vimrc
-    - target: /home/buddy/.vim/vimrc
-    - user: buddy
+    - name: /home/{{user_config.username}}/.vimrc
+    - target: /home/{{user_config.username}}/.vim/vimrc
+    - user: {{user_config.username}}
 
 Vundle:
   file.directory:
-    - name: /home/buddy/.vim/bundle
-    - user: buddy
-    - group: buddy
+    - name: /home/{{user_config.username}}/.vim/bundle
+    - user: {{user_config.username}}
+    - group: {{user_config.username}}
     - mode: 755
     - makedirs: True
   git.latest:
     - name: https://github.com/VundleVim/Vundle.vim.git
     - rev: master
-    - target: /home/buddy/.vim/bundle/
-    - user: buddy
+    - target: /home/{{user_config.username}}/.vim/bundle/
+    - user: {{user_config.username}}
   require:
     - pkg.installed: vim

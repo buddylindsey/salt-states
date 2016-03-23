@@ -1,6 +1,7 @@
 /etc/salt/minion:
   file.managed:
     - source: salt://salt/minion
+    - template: jinja
 
 utils:
   pkg.installed:

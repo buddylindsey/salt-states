@@ -1,9 +1,10 @@
+{% set user_config = pillar.get('user', {'username': 'blindsey'}) -%}
 file_client: local
 
 file_roots:
   base:
-    - /home/buddy/.salt/salt
+    - /home/{{user_config.username}}/.salt/salt
 
 pillar_roots:
   base:
-    - /home/buddy/.salt/pillar
+    - /home/{{user_config.username}}/.salt/pillar

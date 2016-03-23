@@ -1,22 +1,22 @@
+{% set user_config = pillar.get('user', {'username': 'blindsey'}) -%}
 tmux:
   pkg.installed
 
-powerline:
-  pkg.installed
-
-/home/buddy/.tmux.conf:
+/home/{{user_config.username}}/.tmux.conf:
   file.managed:
     - source: salt://tmux/tmux.conf
+    - user: {{user_config.username}}
+    - group: {{user_config.username}}
 
-/home/buddy/.tmux/plugins:
+/home/{{user_config.username}}/.tmux/plugins:
   file.directory:
-    - user: buddy
-    - group: buddy
+    - user: {{user_config.username}}
+    - group: {{user_config.username}}
     - mode: 755
     - makedirs: True
 
 https://github.com/tmux-plugins/tpm.git:
   git.latest:
     - rev: master
-    - target: /home/buddy/.tmux/plugins/tpm
-    - user: buddy
+    - target: /home/{{user_config.username}}/.tmux/plugins/tpm
+    - user: {{user_config.username}}
